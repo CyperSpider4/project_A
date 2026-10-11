@@ -112,3 +112,4 @@ def delete_category(category_id):
             return category
     raise HTTPException(status_code=404, detail="Category not found")
                 
+print('Now')
