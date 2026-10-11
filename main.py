@@ -111,5 +111,4 @@ def delete_category(category_id):
             categories.remove(category)
             return category
     raise HTTPException(status_code=404, detail="Category not found")
-                
-print('Now')
+
