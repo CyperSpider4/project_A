@@ -54,6 +54,7 @@ def update_task(task_id: str, payload: TaskUpdateSchema):
             if payload.completed is not None:
                 task.completed = payload.completed
             return task
+    raise HTTPException(status_code=404, detail="Задача не найдена")
 
 
 @app.delete("/tasks/{task_id}", status_code=status.HTTP_204_NO_CONTENT)
@@ -62,6 +63,7 @@ def delete_task(task_id):
         if task.id == task_id:
             tasks.remove(task)
         return task
+    raise HTTPException(status_code=404, detail="Задача не найдена")
     
     
     
@@ -101,7 +103,7 @@ def update_category(category_id: str, payload: CategoryUpdate):
             if payload.name is not None:
                 category.name = payload.name
             return category
-    raise HTTPException(status_code=404, detail="Category not found")
+    raise HTTPException(status_code=404, detail="Категория не найдена")
 
 
 @app.delete("/categories/{category_id}", status_code=status.HTTP_204_NO_CONTENT)
@@ -110,5 +112,5 @@ def delete_category(category_id):
         if category.id == category_id:
             categories.remove(category)
             return category
-    raise HTTPException(status_code=404, detail="Category not found")
+    raise HTTPException(status_code=404, detail="Категория не найдена")
 
