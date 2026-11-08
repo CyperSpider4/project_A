@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
-from app.repositories.category import CategoryRepository
-from app.schemas.category import Category, CategoryCreate, CategoryUpdate
+from src.repositories.category import CategoryRepository
+from src.schemas.category import Category, CategoryCreate, CategoryUpdate
 
 
 class CategoryNotFoundError(Exception):

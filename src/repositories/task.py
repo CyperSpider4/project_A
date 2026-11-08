@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from sqlalchemy import select
 
-from app.models.task import TaskORM
+from src.models.task import TaskORM
 
 
 

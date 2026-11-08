@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
-from app.repositories.task import TaskRepository
-from app.schemas.task import TaskSchema, TaskCreateSchema, TaskUpdateSchema
+from src.repositories.task import TaskRepository
+from src.schemas.task import TaskSchema, TaskCreateSchema, TaskUpdateSchema
 
 
 class TaskNotFoundError(Exception):

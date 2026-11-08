@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 
-from app.api.dependencies import get_category_service
-from app.schemas.category import Category, CategoryCreate, CategoryUpdate
-from app.services.category import CategoryNotFoundError, CategoryService
+from src.api.dependencies import get_category_service
+from src.schemas.category import Category, CategoryCreate, CategoryUpdate
+from src.services.category import CategoryNotFoundError, CategoryService
 
 
 router = APIRouter(prefix="/categories", tags=["categories"])
