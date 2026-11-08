@@ -20,7 +20,7 @@ settings = get_settings()
 app = FastAPI(lifespan=lifespan)
 
 
-src.add_middleware(
+app.add_middleware(
      CORSMiddleware,
     allow_origins=settings.cors_origins,
     allow_methods=["*"],
@@ -29,4 +29,4 @@ src.add_middleware(
 )
 
 
-src.include_router(api_router)
+app.include_router(api_router)
