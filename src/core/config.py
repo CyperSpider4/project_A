@@ -10,8 +10,8 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    DATABASE_URL: str
-    cors_origins: list[str]
+    DATABASE_URL: str = ""
+    cors_origins: list[str] = []
 
 
 @lru_cache

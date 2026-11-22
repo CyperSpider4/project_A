@@ -9,7 +9,6 @@ class CategoryNotFoundError(Exception):
 
 
 class CategoryService:
-
     def __init__(self, db: Session):
         self.db = db
         self.repository = CategoryRepository(db)
@@ -24,7 +23,9 @@ class CategoryService:
         self.db.refresh(category_orm)
         return Category.model_validate(category_orm)
 
-    def update_category(self, category_id: str, category_update: CategoryUpdate) -> Category:
+    def update_category(
+        self, category_id: str, category_update: CategoryUpdate
+    ) -> Category:
         category_for_update = self.repository.get_by_id(category_id=category_id)
         if not category_for_update:
             raise CategoryNotFoundError(f"Категория с id {category_id} не найдена")

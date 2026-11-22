@@ -5,9 +5,8 @@ from fastapi import FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 
 from src.api.router import api_router
-from src.core.logging import configure_logging
 from src.core.config import get_settings
-    
+from src.core.logging import configure_logging
 
 configure_logging()
 
@@ -31,11 +30,11 @@ app.add_middleware(
 @app.middleware("http")
 async def count_requests(request: Request, call_next) -> Response:
     request.app.state.request_count += 1
-    
+
     response: Response = await call_next(request)
-    
+
     response.headers["X-Request-Number"] = str(request.app.state.request_count)
-    
+
     return response
 
 
