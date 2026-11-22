@@ -22,6 +22,4 @@ repos:
         additional_dependencies: [mypy]
         pass_filenames: false
         types_or: [python]
-
-
-        ###
+        
