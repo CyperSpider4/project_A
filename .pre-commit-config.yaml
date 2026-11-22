@@ -2,22 +2,23 @@ repos:
   - repo: local
     hooks:
       - id: ruff-check
-        name: ruff check --fix
-        entry: ruff check . --fix
-        language: system
-        pass_filenames: false
+        name: ruff check
+        entry: ruff check --force-exclude
+        language: python
+        additional_dependencies: [ruff]
         types_or: [python]
 
       - id: ruff-format
         name: ruff format
-        entry: ruff format .
-        language: system
-        pass_filenames: false
+        entry: ruff format --force-exclude
+        language: python
+        additional_dependencies: [ruff]
         types_or: [python]
 
       - id: mypy
         name: mypy
         entry: mypy
-        language: system
+        language: python
+        additional_dependencies: [mypy]
         pass_filenames: false
         types_or: [python]
